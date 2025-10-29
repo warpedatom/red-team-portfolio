@@ -1,13 +1,14 @@
 # red-team-portfolio
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)  
-Lab-based red team & penetration testing portfolio (adversary simulation, Active Directory research).
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
+Lab-based red team and penetration testing portfolio (adversary simulation, Active Directory research).
 
 ---
 
 ## Highlights
-- Active Directory Pentest Lab (Kerberoast, AS-REP analysis, BloodHound mapping, Ticket/Certificate attacks)  
-- Adversary Simulation (MITRE ATT&CK–mapped scenarios)  
+- Active Directory Pentest Lab (Kerberoast, AS-REP analysis, BloodHound mapping, ticket/certificate attacks)  
+- Adversary simulation (MITRE ATT&CK–mapped scenarios)  
 - GPU-accelerated password auditing (Hashcat / RTX 3080)  
 - Toolkit automation & SOPs for repeatable lab runs
 
@@ -31,14 +32,14 @@ Lab-based red team & penetration testing portfolio (adversary simulation, Active
 - [GPU-Accelerated Password Auditing](projects/gpu-password-auditing.md)  
 - [Pentest & Red-Team Toolkit Automation](projects/pentest-redteam-toolkit.md)
 
-> For a short, downloadable summary of the AD lab (one page): see `assets/ad-lab-summary.pdf`
+> Download: [AD Lab one-pager (PDF)](assets/ad-lab-summary.pdf) — short summary of methods, findings, and recommendations.
 
 ---
 
 ## Repository structure
 - `projects/` — lab project writeups and outcomes (non-actionable)  
 - `blog/` — methodology and tool analysis (conceptual, defensive focus)  
-- `assets/` — diagrams, one-page PDFs, visuals (no sensitive artifacts)  
+- `assets/` — diagrams and one-page PDFs (no sensitive artifacts)  
 - `notes/` — curated reading list and references
 
 ---
@@ -60,5 +61,5 @@ LinkedIn: https://www.linkedin.com/in/perry-jared-r
 
 ---
 
-**Repository topics** (add via GitHub UI): `red-team`, `adversary-simulation`, `penetration-testing`, `active-directory`, `mitre-attck`
-
+**Recommended repo topics** (add via GitHub UI):  
+`red-team`, `adversary-simulation`, `penetration-testing`, `active-directory`, `mitre-attck`, `kerberoast`, `cybersecurity`
