@@ -26,3 +26,10 @@ defaults:
       type: pages
     values:
       layout: single
+      footer_links:
+  - title: GitHub
+    url: https://github.com/warpedatom
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/perry-jared-r/
+  - title: MITRE ATT&CK
+    url: https://attack.mitre.org/
