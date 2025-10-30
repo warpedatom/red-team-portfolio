@@ -4,59 +4,65 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kerberoasting | Velkris Red Team Blog</title>
+  <meta name="description" content="Kerberoasting: concept, detection, and defensive controls." />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+
+  <!-- Fonts + Theme -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
-  <main style="max-width:800px;margin:3rem auto;padding:1rem;">
-    <h1>Kerberoasting: Concept, Detection, and Defensive Controls</h1>
-    <p><strong>Author:</strong> Velkris (Jared Perry)</p>
-    <p><strong>Focus:</strong> Identity-based credential theft in Kerberos environments</p>
+  <main style="max-width:900px;margin:3rem auto;padding:1rem;">
+    <article>
+      <h1>Kerberoasting: Concept, Detection, and Defensive Controls</h1>
 
-    <h2>Summary</h2>
-    <p>Kerberoasting is an offline credential-theft technique that targets service accounts in Active Directory by requesting service tickets (TGS) for service principal names (SPNs), extracting the encrypted portion, and cracking it offline.</p>
+      <p><strong>Author:</strong> Velkris (Jared Perry)</p>
+      <p><strong>Focus:</strong> Identity-based credential theft in Kerberos environments</p>
 
-    <h2>How it works (conceptual)</h2>
-    <ul>
-      <li>A client requests a service ticket (TGS) for an SPN from the Ticket Granting Service (TGS) using a valid Kerberos TGT.</li>
-      <li>The TGS issues a ticket encrypted with the service account’s key.</li>
-      <li>An attacker with the ticket copies the encrypted data and tries to recover the plaintext password offline using password-cracking techniques.</li>
-    </ul>
+      <h2>Summary</h2>
+      <p>Kerberoasting is an offline credential-theft technique that targets service accounts in Active Directory by requesting service tickets (TGS) for service principal names (SPNs), extracting the encrypted portion, and cracking it offline.</p>
 
-    <p><strong>Key point:</strong> The attack does not require domain credentials beyond the ability to request service tickets; it becomes powerful when service accounts have weak passwords or poor rotation practices.</p>
+      <h2>How it works (conceptual)</h2>
+      <ul>
+        <li>A client requests a service ticket (TGS) for an SPN from the Ticket Granting Service (TGS) using a valid Kerberos TGT.</li>
+        <li>The TGS issues a ticket encrypted with the service account’s key.</li>
+        <li>An attacker with the ticket copies the encrypted data and tries to recover the plaintext password offline using password-cracking techniques.</li>
+      </ul>
 
-    <h2>Defensive detection signals</h2>
-    <ul>
-      <li>High volume of TGS requests from many distinct SPNs originating from a single account or host.</li>
-      <li>Unusual TGS requests outside normal usage patterns (time of day, source host).</li>
-      <li>Repeated Kerberos error events (abnormal replay/misuse).</li>
-      <li>Windows event IDs: 4768/4769 anomalies, authentication anomalies, and privileged account activity.</li>
-      <li>SIEM detection: watch for enumeration-like behavior (many TGS requests without corresponding connections).</li>
-    </ul>
+      <p><strong>Key point:</strong> The attack does not require domain credentials beyond the ability to request service tickets; it becomes powerful when service accounts have weak passwords or poor rotation practices.</p>
 
-    <h2>Mitigations & Hardening</h2>
-    <ul>
-      <li>Enforce strong, unique service-account passwords and rotate them frequently.</li>
-      <li>Avoid using domain or high-privilege accounts for service usage.</li>
-      <li>Disable unused SPNs.</li>
-      <li>Implement PAM and least privilege for service accounts.</li>
-      <li>Log and centralize Kerberos-related events.</li>
-    </ul>
+      <h2>Defensive detection signals</h2>
+      <ul>
+        <li>High volume of TGS requests for many distinct SPNs originating from a single account or host.</li>
+        <li>Unusual TGS requests outside normal usage patterns (time of day, source host).</li>
+        <li>Repeated Kerberos error events (if cracking attempts cause abnormal replay or misuse).</li>
+        <li>Windows event IDs of interest: TGS requests (Event IDs 4768/4769), authentication anomalies, privileged account activity.</li>
+        <li>SIEM/hunting detection: watch for enumeration-like behavior where a user requests many service tickets without matching service connections.</li>
+      </ul>
 
-    <h2>Safe lab validation (non-actionable)</h2>
-    <ul>
-      <li>Build isolated AD test environments with SPNs and service accounts.</li>
-      <li>Simulate TGS request patterns in lab (without exploit/cracking tools in production).</li>
-      <li>Ensure SIEM rules align with expected TGS volumes and baselines.</li>
-    </ul>
+      <h2>Mitigations & hardening</h2>
+      <ul>
+        <li>Enforce strong, unique service-account passwords and rotate them frequently.</li>
+        <li>Avoid using domain or high-privilege accounts for services—use Managed Service Accounts where possible.</li>
+        <li>Disable unnecessary SPNs and remove unused service accounts.</li>
+        <li>Implement privileged access management (PAM) and least privilege for service accounts.</li>
+        <li>Increase logging and centralize collection of Kerberos-related events and authentication telemetry.</li>
+      </ul>
 
-    <h2>TL;DR</h2>
-    <p>Kerberoasting exploits weak service-account passwords via offline cracking of Kerberos service tickets.  
-    Mitigate with strong password hygiene, account hardening, and monitoring for abnormal TGS requests.</p>
+      <h2>Safe lab validation (non-actionable)</h2>
+      <ul>
+        <li>Build an isolated AD testbed with representative SPNs and service accounts.</li>
+        <li>Validate detection logic by simulating ticket request patterns (no real cracking tools in production).</li>
+        <li>Ensure your SIEM produces alerts for anomalous TGS request volumes matching expected baselines.</li>
+      </ul>
 
-    <footer style="margin-top:3rem;text-align:center;color:var(--muted);font-size:0.9rem;">
-      <p>© 2025 Velkris | For educational and professional demonstration purposes only.</p>
-    </footer>
+      <h2>TL;DR</h2>
+      <p>Kerberoasting exploits weak service-account passwords via offline cracking of Kerberos service tickets.  
+      Mitigate with strong password hygiene, account hardening, and monitoring for abnormal TGS requests.</p>
+
+      <footer style="margin-top:2.5rem;color:var(--muted);font-size:0.9rem;">© 2025 Velkris | For educational & professional demonstration purposes only.</footer>
+    </article>
   </main>
 </body>
 </html>
