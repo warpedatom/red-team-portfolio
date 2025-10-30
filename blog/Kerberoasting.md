@@ -1,3 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kerberoasting | Velkris Red Team Blog</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <main id="content" style="max-width:800px;margin:3rem auto;padding:1rem;"></main>
+
+  <script>
+    fetch('Kerberoasting.md')
+      .then(res => res.text())
+      .then(md => {
+        document.getElementById('content').innerHTML = marked.parse(md);
+      });
+  </script>
+</body>
+</html>
+
 # Kerberoasting: Concept, Detection, and Defensive Controls
 
 **Author:** Velkris (Jared Perry)  
