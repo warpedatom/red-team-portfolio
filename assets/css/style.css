@@ -1,4 +1,3 @@
- <style>
     :root {
       --bg:#000000;                /* vantablack */
       --fg:#d9e9da;                /* soft off-white */
@@ -115,4 +114,3 @@
       mix-blend-mode:screen;
       pointer-events:none;
     }
-  </style>
