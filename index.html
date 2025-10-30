@@ -92,31 +92,54 @@
     <p>© 2025 Velkris. All rights reserved. Sanitized educational content only.</p>
   </footer>
 
-  <!-- ===== Auto list loader ===== -->
-  <script>
-  const user="warpedatom",repo="Velkris-Red-Team-Portfolio";
+<!-- ===== Auto list loader (supports .md and .html; prefers .html) ===== -->
+<script>
+const user = "warpedatom";
+const repo = "Velkris-Red-Team-Portfolio";
 
-  fetch(`https://api.github.com/repos/${user}/${repo}/contents/projects`)
-    .then(r=>r.json()).then(f=>{
-      const ul=document.querySelector('#projects ul');
-      f.filter(x=>x.name.endsWith('.md')).forEach(x=>{
-        const li=document.createElement('li');
-        const n=x.name.replace(/-/g,' ').replace('.md','');
-        li.innerHTML=`<a href="projects/${x.name}">${n}</a>`;
-        ul.appendChild(li);
-      });
+async function loadDirIntoList(dir, ulSelector, subfolder) {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${user}/${repo}/contents/${dir}`);
+    const files = await res.json();
+    if (!Array.isArray(files)) return;
+
+    // map names -> available extensions
+    const nameMap = {};
+    files.forEach(f => {
+      // ignore hidden files
+      if (!f.name || f.name.startsWith('.')) return;
+      const m = f.name.match(/^(.+)\.(md|html)$/i);
+      if (!m) return;
+      const base = m[1];
+      const ext = m[2].toLowerCase();
+      nameMap[base] = nameMap[base] || {};
+      nameMap[base][ext] = f.name;
     });
 
-  fetch(`https://api.github.com/repos/${user}/${repo}/contents/blog`)
-    .then(r=>r.json()).then(f=>{
-      const ul=document.querySelector('#blog ul');
-      f.filter(x=>x.name.endsWith('.md')).forEach(x=>{
-        const li=document.createElement('li');
-        const n=x.name.replace(/-/g,' ').replace('.md','');
-        li.innerHTML=`<a href="blog/${x.name}">${n}</a>`;
-        ul.appendChild(li);
-      });
+    const baseNames = Object.keys(nameMap).sort((a,b)=> a.localeCompare(b, undefined, {sensitivity:'base'}));
+    const ul = document.querySelector(ulSelector);
+    if (!ul) return;
+
+    baseNames.forEach(base => {
+      // prefer html if it exists, otherwise md
+      const chosen = nameMap[base].html ? nameMap[base].html : nameMap[base].md;
+      if (!chosen) return;
+      const li = document.createElement('li');
+      // nice label: replace dashes and underscores with spaces, remove extension
+      const label = base.replace(/[-_]+/g, ' ');
+      const href = `${subfolder}/${chosen}`;
+      li.innerHTML = `<a href="${href}">${label}</a>`;
+      ul.appendChild(li);
     });
-  </script>
-</body>
-</html>
+
+  } catch (err) {
+    console.error("Auto-loader error:", err);
+  }
+}
+
+// projects list (files in /projects/)
+loadDirIntoList('projects', '#projects ul', 'projects');
+
+// blog list (files in /blog/)
+loadDirIntoList('blog', '#blog ul', 'blog');
+</script>
