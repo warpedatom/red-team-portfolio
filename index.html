@@ -19,10 +19,10 @@
   <style>
     :root {
       --bg:#000000;                /* vantablack */
-      --fg:#d9e9da;                /* soft off-white for contrast */
+      --fg:#d9e9da;                /* soft off-white */
       --accent:#00b37e;            /* phthalo green accent */
       --muted:#6b7b6d;
-      --card:#0a0a0a;              /* deep neutral black */
+      --card:#0a0a0a;
       --border:#111;
       font-family:Inter,system-ui,sans-serif;
     }
@@ -67,19 +67,34 @@
       box-shadow:0 0 14px rgba(0,179,126,0.15);
     }
 
+    /* Typography */
     h1,h2,h3{
       color:var(--accent);
       margin-top:0;
       letter-spacing:0.5px;
     }
+
+    /* Terminal-style header accent */
+    h2 {
+      font-size:1.3rem;
+      border-left:4px solid var(--accent);
+      padding-left:10px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    /* Links + hover tracer */
     a{
       color:var(--accent);
       text-decoration:none;
     }
     a:hover{
       color:#00ffae;
-      text-decoration:underline;
+      text-shadow:0 0 8px #00b37e, 0 0 16px #00ffae;
+      transition: all .2s ease;
     }
+    body {cursor: crosshair;}
+
     ul{padding-left:1.2rem;margin:0;}
     footer{
       text-align:center;
@@ -93,6 +108,31 @@
     #contact li{margin:6px 0;color:var(--muted);}
     #contact a{color:var(--accent);text-decoration:none;}
     #contact a:hover{text-decoration:underline;color:#00ffae;}
+
+    /* === Fade-in + Section Reveal === */
+    body {opacity:0;animation:fadeIn 1s ease forwards;}
+    @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+
+    section {
+      opacity:0;
+      transform:translateY(10px);
+      animation:rise .6s ease forwards;
+    }
+    section:nth-of-type(1){animation-delay:.4s;}
+    section:nth-of-type(2){animation-delay:.6s;}
+    section:nth-of-type(3){animation-delay:.8s;}
+    section:nth-of-type(4){animation-delay:1s;}
+    @keyframes rise {to{opacity:1;transform:translateY(0);}}
+
+    /* === Ambient Glow / Subtle Overlay === */
+    body::before {
+      content:"";
+      position:fixed;
+      inset:0;
+      background:radial-gradient(circle at center,rgba(0,179,126,0.05) 0%,transparent 80%);
+      mix-blend-mode:screen;
+      pointer-events:none;
+    }
   </style>
 </head>
 
@@ -107,8 +147,12 @@
       <a href="#contact">Contact</a>
     </nav>
     <div style="position:absolute;bottom:22px;left:28px;">
-      <h1 style="font-size:2rem;margin:0;color:var(--accent);text-shadow:0 0 20px rgba(0,179,126,0.4);">Velkris Red Team Portfolio</h1>
-      <p style="margin:4px 0 0;color:var(--muted);font-size:1rem;">Red Team Operations • Adversary Simulation • Penetration Testing</p>
+      <h1 style="font-size:2rem;margin:0;color:var(--accent);text-shadow:0 0 20px rgba(0,179,126,0.4);">
+        Velkris Red Team Portfolio
+      </h1>
+      <p style="margin:4px 0 0;color:var(--muted);font-size:1rem;">
+        Red Team Operations • Adversary Simulation • Penetration Testing
+      </p>
     </div>
   </header>
 
