@@ -32,7 +32,16 @@ Lab-based red team and penetration testing portfolio (adversary simulation, Acti
 - [GPU-Accelerated Password Auditing](projects/gpu-password-auditing.md)  
 - [Pentest & Red-Team Toolkit Automation](projects/pentest-redteam-toolkit.md)
 
-> Download: [AD Lab one-pager (PDF)](assets/ad-lab-summary.pdf) — short summary of methods, findings, and recommendations.
+## Downloadable One-Pagers
+
+Each project includes a concise, shareable one-page summary (PDF) for quick review.
+
+- [Active Directory Pentest Lab (PDF)](assets/Active-Directory-Pentest-Lab.pdf)
+- [Threat Intelligence & ATT&CK Mapping Project (PDF)](assets/Threat-Intelligence-&-ATT&CK-Mapping-Project.pdf)
+- [Adversary Simulation Labs (PDF)](assets/Adversary-Simulation-Labs.pdf)
+- [GPU-Accelerated Password Auditing (PDF)](assets/GPU-Accelerated-Password-Auditing.pdf)
+- [Pentest & Red-Team Toolkit Automation (PDF)](assets/Pentest-&-Red-Team-Toolkit-Automation.pdf)
+
 
 ---
 
