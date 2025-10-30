@@ -1,66 +1,135 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Velkris | Red Team & Offensive Security Portfolio</title>
-  <meta name="description" content="Velkris — Red team operations, penetration testing, and adversary emulation portfolio.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Velkris — Red team operations, penetration testing, and adversary emulation portfolio." />
+
+  <!-- Meta preview -->
+  <meta property="og:title" content="Velkris Red Team Portfolio" />
+  <meta property="og:description" content="Portfolio for adversary simulation, penetration testing, and red team operations." />
+  <meta property="og:image" content="assets/Dread-Host-Banner.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
   <style>
-    :root{
-      --bg:#090d16;--fg:#e0e6ef;--accent:#67e8f9;--muted:#9ba3b0;
-      --card:#0f1524;--border:#1e293b;
-      font-family:Inter,system-ui;
+    :root {
+      --bg:#000000;                /* vantablack */
+      --fg:#d9e9da;                /* soft off-white for contrast */
+      --accent:#00b37e;            /* phthalo green accent */
+      --muted:#6b7b6d;
+      --card:#0a0a0a;              /* deep neutral black */
+      --border:#111;
+      font-family:Inter,system-ui,sans-serif;
     }
-    *{box-sizing:border-box;}
-    body{margin:0;background:var(--bg);color:var(--fg);line-height:1.6;}
-    header{padding:2rem 1rem;text-align:center;}
-    h1{font-size:2rem;margin-bottom:.5rem;}
-    p.lead{color:var(--muted);max-width:650px;margin:0 auto;}
-    main{max-width:1000px;margin:2rem auto;padding:0 1rem;display:grid;gap:2rem;}
-    section{background:var(--card);padding:1.5rem;border-radius:12px;border:1px solid var(--border);}
-    h2{margin-top:0;font-size:1.3rem;color:var(--accent);}
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
-    ul{padding-left:1.2rem;}
-    footer{text-align:center;margin:3rem 0;color:var(--muted);font-size:.9rem;}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* Header + Nav */
+    header img{width:100%;display:block;border-bottom:1px solid var(--border);}
+    nav a{
+      margin-right:22px;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    nav a:hover{color:#00ffae;}
+
+    /* Layout */
+    main{
+      max-width:1000px;
+      margin:2rem auto;
+      padding:0 1rem;
+      display:grid;
+      gap:2rem;
+    }
+    section{
+      background:var(--card);
+      padding:1.5rem;
+      border-radius:12px;
+      border:1px solid var(--border);
+      transition:all .3s ease;
+    }
+    section:hover{
+      border-color:rgba(0,179,126,0.5);
+      box-shadow:0 0 14px rgba(0,179,126,0.15);
+    }
+
+    h1,h2,h3{
+      color:var(--accent);
+      margin-top:0;
+      letter-spacing:0.5px;
+    }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{
+      color:#00ffae;
+      text-decoration:underline;
+    }
+    ul{padding-left:1.2rem;margin:0;}
+    footer{
+      text-align:center;
+      margin:3rem 0;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    /* Contact cleanup */
+    #contact ul{list-style:none;padding-left:0;margin:0;}
+    #contact li{margin:6px 0;color:var(--muted);}
+    #contact a{color:var(--accent);text-decoration:none;}
+    #contact a:hover{text-decoration:underline;color:#00ffae;}
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Velkris Red Team Portfolio</h1>
-    <p class="lead">Lab-based red team & penetration testing projects, research blogs, and adversary simulation summaries. All material is sanitized for public release.</p>
+  <!-- ===== Banner & Navigation ===== -->
+  <header style="position:relative;">
+    <img src="assets/Dread-Host-Banner.png" alt="Velkris Banner" />
+    <nav style="position:absolute;top:14px;right:24px;">
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
+      <a href="#assets">Assets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="position:absolute;bottom:22px;left:28px;">
+      <h1 style="font-size:2rem;margin:0;color:var(--accent);text-shadow:0 0 20px rgba(0,179,126,0.4);">Velkris Red Team Portfolio</h1>
+      <p style="margin:4px 0 0;color:var(--muted);font-size:1rem;">Adversary Simulation • Pentesting • Threat Emulation</p>
+    </div>
   </header>
 
+  <!-- ===== Content ===== -->
   <main>
-    <section>
+
+    <section id="projects">
       <h2>Projects</h2>
-      <p>Browse sanitized project reports and summaries of my red team and pentest lab work:</p>
-      <ul>
-        <li><a href="projects/Active-Directory-Lab.md">Active Directory Lab</a></li>
-        <li><a href="projects/Adversary-Simulation-Labs.md">Adversary Simulation Labs</a></li>
-        <li><a href="projects/GPU-Password-Auditing.md">GPU Password Auditing</a></li>
-        <li><a href="projects/Pentest-Redteam-Toolkit.md">Pentest & Red Team Toolkit</a></li>
-        <li><a href="projects/Threat-Intel-Attck-Mapping.md">Threat Intel & ATT&CK Mapping</a></li>
-      </ul>
+      <p>Sanitized reports and red-team lab summaries:</p>
+      <ul></ul>
     </section>
 
-    <section>
+    <section id="blog">
       <h2>Blog & Technique Analysis</h2>
-      <p>In-depth breakdowns of red-team attack chains and Kerberos-based abuse mechanisms:</p>
-      <ul>
-        <li><a href="blog/Kerberoasting.md">Kerberoasting</a></li>
-        <li><a href="blog/Mimikatz-Protocol-Level-Analysis.md">Mimikatz Protocol Analysis</a></li>
-        <li><a href="blog/Golden-Ticket-Attacks.md">Golden Ticket Attacks</a></li>
-        <li><a href="blog/Golden-Certificate-Attacks.md">Golden Certificate Attacks</a></li>
-        <li><a href="blog/Diamond-Ticket-Attacks.md">Diamond Ticket Attacks</a></li>
-        <li><a href="blog/Ticket-vs-Certificate-Comparison.md">Ticket vs Certificate Comparison</a></li>
-      </ul>
+      <p>Protocol-level analysis, Kerberos exploitation chains, and attack simulations:</p>
+      <ul></ul>
     </section>
 
-    <section>
+    <section id="assets">
       <h2>Assets & Reports</h2>
-      <p>Download sanitized lab summaries and visual documentation:</p>
+      <p>Download sanitized documentation and PDF reports:</p>
       <ul>
         <li><a href="assets/Active-Directory-Pentest-Lab.pdf">Active Directory Pentest Lab (PDF)</a></li>
         <li><a href="assets/Adversary-Simulation-Labs.pdf">Adversary Simulation Labs (PDF)</a></li>
@@ -78,10 +147,48 @@
         <li><a href="LICENSE.md">License (MIT)</a></li>
       </ul>
     </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For collaboration or professional inquiries:</p>
+      <ul>
+        <li>Email: <a href="mailto:perry.jared.r@gmail.com">perry.jared.r@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/warpedatom">@warpedatom</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
-    <p>© 2025 Velkris. All rights reserved. This portfolio contains only sanitized and educational content for ethical security research.</p>
+    <p>© 2025 Velkris. All rights reserved. Sanitized educational content only.</p>
   </footer>
+
+  <!-- ===== Auto list loader ===== -->
+  <script>
+  const user="warpedatom",repo="Velkris-Red-Team-Portfolio";
+
+  fetch(`https://api.github.com/repos/${user}/${repo}/contents/projects`)
+    .then(r=>r.json()).then(f=>{
+      const ul=document.querySelector('#projects ul');
+      f.filter(x=>x.name.endsWith('.md')).forEach(x=>{
+        const li=document.createElement('li');
+        const n=x.name.replace(/-/g,' ').replace('.md','');
+        li.innerHTML=`<a href="projects/${x.name}">${n}</a>`;
+        ul.appendChild(li);
+      });
+    });
+
+  fetch(`https://api.github.com/repos/${user}/${repo}/contents/blog`)
+    .then(r=>r.json()).then(f=>{
+      const ul=document.querySelector('#blog ul');
+      f.filter(x=>x.name.endsWith('.md')).forEach(x=>{
+        const li=document.createElement('li');
+        const n=x.name.replace(/-/g,' ').replace('.md','');
+        li.innerHTML=`<a href="blog/${x.name}">${n}</a>`;
+        ul.appendChild(li);
+      });
+    });
+  </script>
 </body>
 </html>
