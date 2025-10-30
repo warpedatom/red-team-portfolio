@@ -1,6 +1,6 @@
 # Active Directory Pentest Lab — Summary
 
-**Author:** Jared Perry  
+**Author:** Velkris (Jared Perry)  
 **Focus:** Red Team / Adversary Simulation  
 **Environment:** Controlled multi-VM Active Directory domain  
 **Purpose:** Research and documentation for identity-based attack simulation and hardening
