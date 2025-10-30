@@ -1,0 +1,14 @@
+# _config.yml
+title: "Velkris — Red Team & Adversary Simulation"
+description: "Adversary simulation research, Active Directory labs, detection validation, and red team notes."
+author: "Velkris (warpedatom)"
+baseurl: ""        # leave blank for user/organization pages
+url: "https://warpedatom.github.io" # change if using a custom domain
+theme: jekyll-theme-slate
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - README.md
+  - LICENSE.md
