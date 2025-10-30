@@ -1,4 +1,8 @@
-# red-team-portfolio
+<p align="center">
+  <img src="assets/dread-host-banner.png" alt="Dread Host Banner" width="1000">
+</p>
+
+<p align="center"><em>Velkris — Red Team & Adversary Simulation Portfolio</em></p>
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
