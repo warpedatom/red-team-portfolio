@@ -129,3 +129,8 @@ LinkedIn: https://www.linkedin.com/in/perry-jared-r
 
 **Recommended repo topics** (add via GitHub UI):  
 `active-directory` `cybersecurity` `penetration-testing` `malware-development` `ethical-hacking` `mitre-attack` `red-teaming` `adversary-simulation-and-triage`
+
+<p align="center">
+  <sub>© 2025 Velkris — Educational Red Team Research | MIT Licensed</sub><br>
+  <sub>All testing and documentation performed in isolated lab environments for research and training purposes only.</sub>
+</p>
