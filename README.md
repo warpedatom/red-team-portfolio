@@ -46,10 +46,11 @@ Each project includes a concise, shareable one-page summary (PDF) for quick revi
 ---
 
 ## Repository structure
-- `projects/` — lab project writeups and outcomes (non-actionable)  
+
+- `assets/` — diagrams and one-page PDFs (no sensitive artifacts)
 - `blog/` — methodology and tool analysis (conceptual, defensive focus)  
-- `assets/` — diagrams and one-page PDFs (no sensitive artifacts)  
 - `notes/` — curated reading list and references
+- `projects/` — lab project writeups and outcomes (non-actionable)
 
 ---
 
