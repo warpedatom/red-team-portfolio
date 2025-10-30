@@ -76,4 +76,4 @@ LinkedIn: https://www.linkedin.com/in/perry-jared-r
 ---
 
 **Recommended repo topics** (add via GitHub UI):  
-`red-team`, `adversary-simulation`, `penetration-testing`, `active-directory`, `mitre-attck`, `kerberoast`, `cybersecurity`
+`active-directory` `cybersecurity` `penetration-testing` `malware-development` `ethical-hacking` `mitre-attack` `red-teaming` `adversary-simulation-and-triage`
