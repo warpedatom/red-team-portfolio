@@ -1,20 +1,72 @@
+<!-- ====== HEADER START ====== -->
+
 <p align="center">
   <img src="assets/Dread-Host-Banner.png" alt="Dread Host Banner" width="1000">
 </p>
 
-<p align="center"><em>Velkris — Red Team & Adversary Simulation Portfolio</em></p>
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+<p align="center"><i>Velkris — Red Team & Adversary Simulation Portfolio</i></p>
 
-Lab-based red team and penetration testing portfolio (adversary simulation, Active Directory research).
+<br>
+
+<p align="center">
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License — Open Use Permitted">
+  </a>
+  <a href="https://github.com/warpedatom">
+    <img src="https://img.shields.io/badge/Author-Velkris-gray?logo=github" alt="Author: Velkris">
+  </a>
+  <a href="https://www.linkedin.com/in/perry-jared-r">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin" alt="LinkedIn Profile">
+  </a>
+  <a href="https://github.com/warpedatom/Red-Team-Portfolio">
+    <img src="https://img.shields.io/github/last-commit/warpedatom/Red-Team-Portfolio?color=brightgreen&logo=github" alt="Last Commit — Active Updates">
+  </a>
+  <a href="https://attack.mitre.org">
+    <img src="https://img.shields.io/badge/MITRE%20ATT%26CK-Reference-red?logo=mitre" alt="MITRE ATT&CK Framework Reference">
+  </a>
+  <img src="https://img.shields.io/badge/status-active-success?style=flat-square" alt="Status: Active Repository">
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=warpedatom.Red-Team-Portfolio" alt="Visitor Count">
+  <img src="https://img.shields.io/github/repo-size/warpedatom/Red-Team-Portfolio?color=gray" alt="Repository Size">
+  <img src="https://img.shields.io/github/stars/warpedatom/Red-Team-Portfolio?style=social" alt="Stars">
+</p>
+
+<br>
 
 ---
 
+<p align="center">
+  <b>Adversary Simulation | Red Team Research | Active Directory Labs | Detection & Defense Insights</b>
+</p>
+
+---
+
+## About This Repository
+
+This repository serves as a **portfolio of red team and adversary simulation research**, focused on practical implementations of attacker tradecraft, detection validation, and system hardening within controlled lab environments.
+
+It includes:
+
+- Hands-on Active Directory attack and defense scenarios  
+- Adversary emulation aligned with the MITRE ATT&CK framework  
+- Automated red team tooling and environment setup scripts  
+- Technical write-ups, methodology blogs, and one-page lab summaries  
+
+Each project emphasizes both the **offensive methodology** and the corresponding **defensive insights** — designed to showcase practical expertise, analytical rigor, and continuous skill development in cybersecurity operations.
+
+---
+
+<!-- ====== HEADER END ====== -->
+
 ## Highlights
-- Active Directory Pentest Lab (Kerberoast, AS-REP analysis, BloodHound mapping, ticket/certificate attacks)  
-- Adversary simulation (MITRE ATT&CK–mapped scenarios)  
-- GPU-accelerated password auditing (Hashcat / RTX 3080)  
-- Toolkit automation & SOPs for repeatable lab runs
+
+Key capabilities and focus areas demonstrated through the included lab environments and project documentation:
+
+- **Active Directory Pentest Lab** — Kerberoasting, AS-REP Roasting, BloodHound mapping, and Ticket/Certificate attacks  
+- **Adversary Simulation** — ATT&CK-aligned scenarios with threat emulation and detection testing  
+- **GPU-Accelerated Password Auditing** — Optimized cracking operations (Hashcat / RTX 3080)  
+- **Toolkit Automation & SOPs** — Streamlined repeatable lab runs and red team workflows  
+- **Defensive Correlation** — Analysis of logs, detections, and event traces for Blue Team validation  
 
 ---
 
