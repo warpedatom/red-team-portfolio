@@ -1,76 +1,64 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Velkris | Red Team & Offensive Security Portfolio</title>
-  <meta name="description" content="Velkris — Red team operations, penetration testing, and adversary emulation portfolio." />
-
-  <!-- SEO / social preview -->
-  <meta property="og:title" content="Velkris Red Team Portfolio" />
-  <meta property="og:description" content="Portfolio for adversary simulation, penetration testing, and red team operations." />
-  <meta property="og:image" content="assets/Dread-Host-Banner.png" />
-  <meta property="og:type" content="website" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-
-  <!-- Fonts & base styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta name="description" content="Velkris — Red team operations, penetration testing, and adversary emulation portfolio.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
+    :root{
       --bg:#090d16;--fg:#e0e6ef;--accent:#67e8f9;--muted:#9ba3b0;
       --card:#0f1524;--border:#1e293b;
       font-family:Inter,system-ui;
     }
-    *{box-sizing:border-box}
+    *{box-sizing:border-box;}
     body{margin:0;background:var(--bg);color:var(--fg);line-height:1.6;}
-    header img{width:100%;display:block;border-bottom:1px solid var(--border);}
-    nav a{margin-right:18px;color:var(--accent);text-decoration:none;font-weight:600;}
-    nav a:hover{text-decoration:underline;}
+    header{padding:2rem 1rem;text-align:center;}
+    h1{font-size:2rem;margin-bottom:.5rem;}
+    p.lead{color:var(--muted);max-width:650px;margin:0 auto;}
     main{max-width:1000px;margin:2rem auto;padding:0 1rem;display:grid;gap:2rem;}
     section{background:var(--card);padding:1.5rem;border-radius:12px;border:1px solid var(--border);}
     h2{margin-top:0;font-size:1.3rem;color:var(--accent);}
     a{color:var(--accent);text-decoration:none;}
     a:hover{text-decoration:underline;}
-    ul{padding-left:1.2rem;margin:0;}
+    ul{padding-left:1.2rem;}
     footer{text-align:center;margin:3rem 0;color:var(--muted);font-size:.9rem;}
   </style>
 </head>
-
 <body>
-  <!-- ===== Hero Banner & Navigation ===== -->
-  <header style="position:relative;">
-    <img src="assets/Dread-Host-Banner.png" alt="Velkris Banner" />
-    <nav style="position:absolute;top:12px;right:20px;">
-      <a href="#projects">Projects</a>
-      <a href="#blog">Blog</a>
-      <a href="#assets">Assets</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div style="position:absolute;bottom:18px;left:20px;">
-      <h1 style="font-size:2rem;margin:0;color:white;text-shadow:0 2px 12px #000;">Velkris Red Team Portfolio</h1>
-      <p style="margin:4px 0 0;color:#9ba3b0;">Adversary Simulation • Pentesting • Threat Emulation</p>
-    </div>
+  <header>
+    <h1>Velkris Red Team Portfolio</h1>
+    <p class="lead">Lab-based red team & penetration testing projects, research blogs, and adversary simulation summaries. All material is sanitized for public release.</p>
   </header>
 
-  <!-- ===== Content Sections ===== -->
   <main>
-
-    <!-- Projects -->
-    <section id="projects">
+    <section>
       <h2>Projects</h2>
       <p>Browse sanitized project reports and summaries of my red team and pentest lab work:</p>
-      <ul></ul>
+      <ul>
+        <li><a href="projects/Active-Directory-Lab.md">Active Directory Lab</a></li>
+        <li><a href="projects/Adversary-Simulation-Labs.md">Adversary Simulation Labs</a></li>
+        <li><a href="projects/GPU-Password-Auditing.md">GPU Password Auditing</a></li>
+        <li><a href="projects/Pentest-Redteam-Toolkit.md">Pentest & Red Team Toolkit</a></li>
+        <li><a href="projects/Threat-Intel-Attck-Mapping.md">Threat Intel & ATT&CK Mapping</a></li>
+      </ul>
     </section>
 
-    <!-- Blog -->
-    <section id="blog">
-      <h2>📚 Blog & Technique Analysis</h2>
-      <p>In-depth breakdowns of red-team attack chains, Kerberos abuse mechanisms, and protocol-level analysis:</p>
-      <ul></ul>
+    <section>
+      <h2>Blog & Technique Analysis</h2>
+      <p>In-depth breakdowns of red-team attack chains and Kerberos-based abuse mechanisms:</p>
+      <ul>
+        <li><a href="blog/Kerberoasting.md">Kerberoasting</a></li>
+        <li><a href="blog/Mimikatz-Protocol-Level-Analysis.md">Mimikatz Protocol Analysis</a></li>
+        <li><a href="blog/Golden-Ticket-Attacks.md">Golden Ticket Attacks</a></li>
+        <li><a href="blog/Golden-Certificate-Attacks.md">Golden Certificate Attacks</a></li>
+        <li><a href="blog/Diamond-Ticket-Attacks.md">Diamond Ticket Attacks</a></li>
+        <li><a href="blog/Ticket-vs-Certificate-Comparison.md">Ticket vs Certificate Comparison</a></li>
+      </ul>
     </section>
 
-    <!-- Assets -->
-    <section id="assets">
+    <section>
       <h2>Assets & Reports</h2>
       <p>Download sanitized lab summaries and visual documentation:</p>
       <ul>
@@ -82,7 +70,6 @@
       </ul>
     </section>
 
-    <!-- Legal -->
     <section>
       <h2>Legal & Conduct</h2>
       <ul>
@@ -91,55 +78,10 @@
         <li><a href="LICENSE.md">License (MIT)</a></li>
       </ul>
     </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <h2>📬 Contact</h2>
-      <p>For collaboration or opportunities, reach out:</p>
-      <ul>
-        <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/warpedatom">@warpedatom</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></li>
-      </ul>
-    </section>
-
   </main>
 
   <footer>
     <p>© 2025 Velkris. All rights reserved. This portfolio contains only sanitized and educational content for ethical security research.</p>
   </footer>
-
-  <!-- ===== Dynamic list loader ===== -->
-  <script>
-  const githubUser = "warpedatom";
-  const githubRepo = "Velkris-Red-Team-Portfolio";
-
-  // Projects list
-  fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/contents/projects`)
-    .then(r=>r.json())
-    .then(files=>{
-      const ul=document.querySelector('#projects ul');
-      files.filter(f=>f.name.endsWith('.md')).forEach(f=>{
-        const li=document.createElement('li');
-        const name=f.name.replace(/-/g,' ').replace('.md','');
-        li.innerHTML=`<a href="projects/${f.name}">${name}</a>`;
-        ul.appendChild(li);
-      });
-    });
-
-  // Blog list
-  fetch(`https://api.github.com/repos/${githubUser}/${githubRepo}/contents/blog`)
-    .then(r=>r.json())
-    .then(files=>{
-      const ul=document.querySelector('#blog ul');
-      files.filter(f=>f.name.endsWith('.md')).forEach(f=>{
-        const li=document.createElement('li');
-        const name=f.name.replace(/-/g,' ').replace('.md','');
-        li.innerHTML=`<a href="blog/${f.name}">${name}</a>`;
-        ul.appendChild(li);
-      });
-    });
-  </script>
 </body>
 </html>
-
